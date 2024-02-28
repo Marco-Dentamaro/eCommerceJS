@@ -1,0 +1,122 @@
+*{
+    font-family: "Montserrat", sans-serif; ;
+}
+
+.navbar{
+    border-bottom: 2px solid rgba(112, 128, 144, 0.046);
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+i{
+    cursor: pointer;
+}
+
+.logos{
+    display: flex;
+    justify-content:space-between ;
+    width: 8%;
+}
+
+.altezza{
+    min-height: 50vh;
+}
+
+.imgMain{
+    height: 400px;
+}
+
+.altezzaColonnaMain{
+    height: 49%;
+}
+
+.cardMain{
+    border-radius: 20px;
+}
+
+.heightMain{
+    height: 60vh;
+}
+
+
+.btn-dark:hover{
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+}
+
+.cardBig:hover{
+    transform: scale(1.017);
+}
+
+.cardSmall1:hover{
+    transform: scale(1.017);
+}
+
+.cardSmall2:hover{
+    transform: scale(1.017);
+}
+
+.cardBig{
+    background-image: linear-gradient(rgba(23,23,23,0.1), rgba(23,23,23,0.8)), url('./media/orologio.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+.cardSmall1{
+    background-image: linear-gradient(rgba(23,23,23,0.1), rgba(23,23,23,0.8)), url('./media/glasses.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+
+}
+
+.cardSmall2{
+    background-image: linear-gradient(rgba(23,23,23,0.1), rgba(23,23,23,0.8)), url('./media/scarpe.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+
+}
+
+
+.fa-regular:active{
+    color: red;
+    
+}
+
+.heightShopNow{
+    height: 50vh;
+}
+
+video{
+    object-fit: cover;
+}
+
+.bg-beige{
+    background-color: #EAE7DA ;
+}
+
+.bro .nav-link {
+    color: white !important;
+}
+
+.btn{
+    border-radius: var(--bs-border-radius-pill)!important;
+    min-width: 100px !important;
+}
+
+.text-bg-orange{
+    color: white;
+    background-color: darkorange;
+}
+
+.colFiltro{
+    min-height: 500px;
+    
+}

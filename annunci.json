@@ -1,0 +1,392 @@
+[
+    {
+    "id": "1",
+    "brand": "Nike",
+    "price": 59.99,
+    "material": "Mesh",
+    "size": "M",
+    "color": "Blue",
+    "category": "Sport",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "2",
+    "brand": "Zara",
+    "price": 49.99,
+    "material": "Cotton",
+    "size": "S",
+    "color": "Black",
+    "category": "Pullover",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "3",
+    "brand": "Adidas",
+    "price": 79.99,
+    "material": "Mesh",
+    "size": "L",
+    "color": "Red",
+    "category": "Trousers",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "4",
+    "brand": "Converse",
+    "price": 69.99,
+    "material": "Cotton",
+    "size": "XL",
+    "color": "White",
+    "category": "Shirt",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "5",
+    "brand": "Vans",
+    "price": 54.99,
+    "material": "Cotton",
+    "size": "XXL",
+    "color": "Gray",
+    "category": "Accessories",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "6",
+    "brand": "Calvin Klein",
+    "price": 89.99,
+    "material": "Cotton",
+    "size": "M",
+    "color": "Green",
+    "category": "T-Shirt",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "7",
+    "brand": "Nike",
+    "price": 79.99,
+    "material": "Cotton",
+    "size": "S",
+    "color": "Black",
+    "category": "T-Shirt",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "8",
+    "brand": "Zara",
+    "price": 39.99,
+    "material": "Mesh",
+    "size": "L",
+    "color": "Blue",
+    "category": "Trousers",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "9",
+    "brand": "Adidas",
+    "price": 89.99,
+    "material": "Wool",
+    "size": "M",
+    "color": "Red",
+    "category": "Accessories",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "10",
+    "brand": "Converse",
+    "price": 64.99,
+    "material": "Cotton",
+    "size": "XL",
+    "color": "Black",
+    "category": "T-Shirt",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "11",
+    "brand": "Vans",
+    "price": 44.99,
+    "material": "Wool",
+    "size": "XXL",
+    "color": "Gray",
+    "category": "Pullover",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "12",
+    "brand": "Calvin Klein",
+    "price": 99.99,
+    "material": "Other",
+    "size": "S",
+    "color": "Green",
+    "category": "Trousers",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "13",
+    "brand": "Nike",
+    "price": 69.99,
+    "material": "Other",
+    "size": "M",
+    "color": "Black",
+    "category": "Shoes",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "14",
+    "brand": "Zara",
+    "price": 59.99,
+    "material": "Other",
+    "size": "L",
+    "color": "Blue",
+    "category": "Accessories",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "15",
+    "brand": "Adidas",
+    "price": 84.99,
+    "material": "Wool",
+    "size": "S",
+    "color": "Red",
+    "category": "Pullover",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "16",
+    "brand": "Converse",
+    "price": 79.99,
+    "material": "Cotton",
+    "size": "XL",
+    "color": "White",
+    "category": "Pullover",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "17",
+    "brand": "Calvin Klein",
+    "price": 49.99,
+    "material": "Cotton",
+    "size": "XXL",
+    "color": "Gray",
+    "category": "Trousers",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "18",
+    "brand": "Calvin Klein",
+    "price": 109.99,
+    "material": "Other",
+    "size": "M",
+    "color": "Green",
+    "category": "Accessories",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "19",
+    "brand": "Nike",
+    "price": 59.99,
+    "material": "Cotton",
+    "size": "S",
+    "color": "Black",
+    "category": "T-Shirt",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "20",
+    "brand": "Zara",
+    "price": 39.99,
+    "material": "Wool",
+    "size": "L",
+    "color": "Blue",
+    "category": "Pullover",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "21",
+    "brand": "Adidas",
+    "price": 79.99,
+    "material": "Mesh",
+    "size": "XL",
+    "color": "Red",
+    "category": "Sport",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "22",
+    "brand": "Converse",
+    "price": 69.99,
+    "material": "Other",
+    "size": "M",
+    "color": "White",
+    "category": "Shoes",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "23",
+    "brand": "Vans",
+    "price": 54.99,
+    "material": "Mesh",
+    "size": "XXL",
+    "color": "Gray",
+    "category": "Accessories",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "24",
+    "brand": "Calvin Klein",
+    "price": 99.99,
+    "material": "Cotton",
+    "size": "M",
+    "color": "Green",
+    "category": "T-Shirt",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "25",
+    "brand": "Nike",
+    "price": 79.99,
+    "material": "Other",
+    "size": "S",
+    "color": "Black",
+    "category": "Pullover",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "26",
+    "brand": "Zara",
+    "price": 49.99,
+    "material": "Mesh",
+    "size": "L",
+    "color": "Blue",
+    "category": "Trousers",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "27",
+    "brand": "Adidas",
+    "price": 89.99,
+    "material": "Other",
+    "size": "M",
+    "color": "Red",
+    "category": "Black",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "28",
+    "brand": "Converse",
+    "price": 59.99,
+    "material": "Other",
+    "size": "XL",
+    "color": "White",
+    "category": "Accessories",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "29",
+    "brand": "Vans",
+    "price": 44.99,
+    "material": "Mesh",
+    "size": "XXL",
+    "color": "Gray",
+    "category": "Sport",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  },
+  {
+    "id": "30",
+    "brand": "Calvin Klein",
+    "price": 89.99,
+    "material": "Wool",
+    "size": "S",
+    "color": "Green",
+    "category": "Pullover",
+    "img" : [
+        {"id": 1, "url": "./media/felpablu.webp" },
+        {"id": 2, "url": "./media/giaccaverde.webp" }
+    ]
+  }
+];
