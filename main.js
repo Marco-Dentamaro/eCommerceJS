@@ -7,6 +7,7 @@ fetch('./annunci.json')
 // elementi catturati
 let radiowrapper = document.querySelector('#radiowrapper');
 let cardswrapper = document.querySelector('#cardswrapper');
+// let checkboxcolors = document.querySelector('#checkboxcolors');
 
 
 
@@ -95,6 +96,57 @@ radios.forEach((button)=>{
     })
 })
 
+
+// funzione setCheckbox + filterByColor
+
+function setCheckbox() {
+    let colors = data.map((annuncio)=> annuncio.color)
+
+    let uniqueColors = Array.from(new Set(colors));
+
+    uniqueColors.forEach( (el) =>{
+        let div= document.createElement('div');
+        div.classList.add('form-check', 'p-0')
+        div.innerHTML = `
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            ${el}
+        </label>
+        `
+        checkboxcolors.appendChild(div)
+    })
+
+}
+setCheckbox()
+
+
+let checkbox = document.querySelectorAll('#checkboxcolors');
+console.log(checkbox);
+
+
+function filterByColor() {
+    let checked = Array.from(checkbox).find( (button)=> button.checked);
+    console.log(checked);
+    let colore = checked.color
+    console.log(colore);
+
+    if (colore == 'allcolors') {
+        showCards(data)
+    }else{
+        let filtered = data.filter( (annuncio)=> annuncio.color == colore);
+        showCards(filtered)
+    }
+
+
+    let filtered = data.filter( (annuncio)=> annuncio.color == colore);
+        showCards(filtered)
+}
+
+checkbox.forEach((button)=>{
+    button.addEventListener('click', ()=>{
+        filterByColor()
+    })
+})
 
 
 
