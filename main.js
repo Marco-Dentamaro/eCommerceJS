@@ -9,6 +9,7 @@ let radiowrapper = document.querySelector('#radiowrapper');
 let cardswrapper = document.querySelector('#cardswrapper');
 
 
+
 // funzione setradios
 
 
@@ -29,16 +30,17 @@ function setRadios() {
         radiowrapper.appendChild(div)
     })
 
-    console.log(uniqueCategories);
 }
 setRadios()
-
+let radios = document.querySelectorAll('.form-check-input');
+console.log(radios);
 
 // funzione showcards
 
 
-    function showCards() {
-        data.forEach((annuncio)=>{
+    function showCards(array) {
+        cardswrapper.innerHTML='';
+        array.forEach((annuncio)=>{
             let div=document.createElement('div')
             div.classList.add('col-md-3', 'col-12', 'mx-3', 'mb-2');
             div.innerHTML=`
@@ -63,10 +65,38 @@ setRadios()
             cardswrapper.appendChild(div)
         })
     }
-showCards()
+showCards(data)
 
-let prova = data[22].img[0].url;
 
-console.log(prova);
+// funzione filterbycategory
+
+function filterByCategory(){
+        
+    let checked = Array.from(radios).find( (button)=> button.checked);
+    let categoria = checked.id
+
+
+    if (categoria == 'all') {
+        showCards(data)
+    }else{
+        let filtered = data.filter( (annuncio)=> annuncio.category == categoria);
+        showCards(filtered)
+    }
+    
+
+}
+
+
+// evento click sui radios
+
+radios.forEach((button)=>{
+    button.addEventListener('click', ()=>{
+        filterByCategory()
+    })
+})
+
+
+
+
 
 })
