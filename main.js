@@ -108,8 +108,8 @@ function setCheckbox() {
         let div= document.createElement('div');
         div.classList.add('form-check', 'p-0')
         div.innerHTML = `
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="form-check-input" type="checkbox" value="${el}" id="flexCheck${el}">
+        <label class="form-check-label" for="flexCheck${el}">
             ${el}
         </label>
         `
@@ -125,28 +125,24 @@ console.log(checkbox);
 
 
 function filterByColor() {
-    let checked = Array.from(checkbox).find( (button)=> button.checked);
-    console.log(checked);
-    let colore = checked.color
-    console.log(colore);
+    let checked = document.querySelectorAll('.form-check-input:checked');
+    let colors = Array.from(checked).map((checkbox) => checkbox.value);
 
-    if (colore == 'allcolors') {
-        showCards(data)
-    }else{
-        let filtered = data.filter( (annuncio)=> annuncio.color == colore);
-        showCards(filtered)
+
+    if (colors.includes('allcolors')) {
+        showCards(data);
+    } else {
+        let filtered = data.filter((annuncio) => colors.includes(annuncio.color));
+        showCards(filtered);
     }
-
-
-    let filtered = data.filter( (annuncio)=> annuncio.color == colore);
-        showCards(filtered)
 }
 
-checkbox.forEach((button)=>{
-    button.addEventListener('click', ()=>{
-        filterByColor()
-    })
-})
+
+document.querySelectorAll('.form-check-input').forEach((checkbox) => {
+    checkbox.addEventListener('click', () => {
+        filterByColor();
+    });
+});
 
 
 
