@@ -1,15 +1,16 @@
 [
     {
     "id": "1",
-    "brand": "Nike",
+    "brand": "Adidas",
     "price": 59.99,
     "material": "Mesh",
     "size": "M",
+    "name": "Italia Football shirt",
     "color": "Blue",
     "category": "Sport",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/dec33d1bdaf347f290c66e2f17d437f5/bb94483403d9423bafc78c0f4c7461a7.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/5c62bfe2ed2c4a65979fe4dca6638036/7bddbf7a7772407d91644c0cda8279c5.jpg?imwidth=1800&filter=packshot" }
     ]
   },
   {
@@ -18,11 +19,12 @@
     "price": 49.99,
     "material": "Cotton",
     "size": "S",
+    "name": "Slim pullover",
     "color": "Black",
     "category": "Pullover",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/8a884aa1ccac43a7ba02388535945ee1/def6d38c475648ca8c4164d842875bc0.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/4e2437bcbcd0497aab46e77642bba320/d399ce1a8ecd406c9b90e5d54f45d32a.jpg?imwidth=1800&filter=packshot" }
     ]
   },
   {
@@ -31,11 +33,12 @@
     "price": 79.99,
     "material": "Mesh",
     "size": "L",
+    "name": "Trousers fit",
     "color": "Red",
     "category": "Trousers",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/71c8fe106b484f25890873586a05f99a/3ecb9d51f73e4c60aabd7c48fa6aa3d7.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/8baa7218d9054f9b99af5f6fab5cb48c/35f8d5b696c24ae182fbfc338ef74ac8.jpg?imwidth=1800&filter=packshot" }
     ]
   },
   {
@@ -44,24 +47,26 @@
     "price": 69.99,
     "material": "Cotton",
     "size": "XL",
+    "name": "T-Shirt",
     "color": "White",
-    "category": "Shirt",
+    "category": "T-Shirt",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/7f4efbad4ea944f1a0f6409899be3b00/3706989a8bd94dd395ce147a46985142.jpg?imwidth=1800&filter=packshot" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/1dcf4593c3c44c1ab4a22dbda888c66f/82c2486b3b6a45a68ef7fc141bbd0f13.jpg?imwidth=1800" }
     ]
   },
   {
     "id": "5",
     "brand": "Vans",
-    "price": 54.99,
+    "price": 24.99,
     "material": "Cotton",
     "size": "XXL",
+    "name": "Winter Hat",
     "color": "Gray",
     "category": "Accessories",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/a53494bcd204333fa1b8f7ae9aa57ff0/d8ea6b9027b4420db8f4619c5bd545c7.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/202b5fbc12a6395dab2df7d316e219c8/25983ac65b074e0fb6e971172bd346af.jpg?imwidth=1800" }
     ]
   },
   {
@@ -70,24 +75,26 @@
     "price": 89.99,
     "material": "Cotton",
     "size": "M",
-    "color": "Green",
+    "name": "Long Sleve shirt",
+    "color": "White",
     "category": "T-Shirt",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/4de1b38dbe214ae68937332274a1e9c5/2a439b58b7544e5cbf0277b009e5b7ca.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/8327b938465748ebb7a451db8f704ab1/43ce0f6aeba242de95b63eda2a34e5ba.jpg?imwidth=1800&filter=packshot" }
     ]
   },
   {
     "id": "7",
     "brand": "Nike",
-    "price": 79.99,
+    "price": 33.99,
     "material": "Cotton",
     "size": "S",
+    "name": "Polo shirt",
     "color": "Black",
     "category": "T-Shirt",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/2aaf4663edf74a338d35c82fcb12aa50/4d0ec47ee5254040b3a3ef38caeee13c.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/4d99629134dd4679a1cd6c02eb7fb367/e0b683874c25423a95e86dbf97e20849.jpg?imwidth=1800" }
     ]
   },
   {
@@ -96,37 +103,40 @@
     "price": 39.99,
     "material": "Mesh",
     "size": "L",
+    "name": "Trousers",
     "color": "Blue",
     "category": "Trousers",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/feecc10503c7336f81581fc0c3b24c62/e3cdb4686e7b4fc084b76602b765aebf.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/836fe7a6286c3cdeb8049b77defb1525/72d05897eb7b4ca3bdc8ce99ac126aa1.jpg?imwidth=1800" }
     ]
   },
   {
     "id": "9",
     "brand": "Adidas",
-    "price": 89.99,
+    "price": 19.99,
     "material": "Wool",
     "size": "M",
+    "name": "Winter Hat",
     "color": "Red",
     "category": "Accessories",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/f8423cd5c2b04180a52b78d9207ca9fc/583c4e783bd14c26bca979dc9eac4704.jpg?imwidth=1800&filter=packshot" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/ed3f6b9528864a8c83d5e6abff381203/f7056031bab64ee0b517bf774400c24a.jpg?imwidth=1800" }
     ]
   },
   {
     "id": "10",
     "brand": "Converse",
-    "price": 64.99,
+    "price": 24.99,
     "material": "Cotton",
     "size": "XL",
+    "name": "Oversize shirt",
     "color": "Black",
     "category": "T-Shirt",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/4bb97fc34082497cb54135af07573d95/15704c0316634f4993b46830b3ab3b13.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/5f5bd465e148466ea1fd436478788f20/18a3be2c70704c39b09757a5ae6c8aa8.jpg?imwidth=156&filter=packshot" }
     ]
   },
   {
@@ -135,11 +145,12 @@
     "price": 44.99,
     "material": "Wool",
     "size": "XXL",
+    "name": "Hoodie",
     "color": "Gray",
     "category": "Pullover",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/368750b113ae4db68afff4328f8aebd0/3875503e628d484288df02518ff00a25.jpg?imwidth=1800&filter=packshot" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/61e304d9e1be4a64a51e01c593e2db96/c94e0a1f28c54e979bcaef48e4b7ca16.jpg?imwidth=1800" }
     ]
   },
   {
@@ -148,37 +159,40 @@
     "price": 99.99,
     "material": "Other",
     "size": "S",
+    "name": "Cargo Trousers",
     "color": "Green",
     "category": "Trousers",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/451def685fc0433fae955e1b5246f510/0105c773a787442d8a118f04403f7d4d.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/68166adcb45b46d895696d0803f2a656/2a3dbed24c9d4f9fab628c51927a7db0.jpg?imwidth=1800" }
     ]
   },
   {
     "id": "13",
     "brand": "Nike",
-    "price": 69.99,
+    "price": 59.99,
     "material": "Other",
     "size": "M",
+    "name": "Mercurial Vapor",
     "color": "Black",
     "category": "Shoes",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/b8a2d87ee575458aa01cd97904510f7b/6e27b057a4b945bf923ceb21bff8061c.jpg?imwidth=1800&filter=packshot" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/9353b99bbd7d4d609f32cd78f6f35796/cd5005f35f7c483a85de1e24b7d7ab1b.jpg?imwidth=1800" }
     ]
   },
   {
     "id": "14",
-    "brand": "Zara",
+    "brand": "Calvin Klein",
     "price": 59.99,
     "material": "Other",
     "size": "L",
-    "color": "Blue",
+    "name": "Sunglasses",
+    "color": "Black",
     "category": "Accessories",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/8d8619fa341b4cf898fec734bc25a47c/3999ea10a91f49e08f3e9d47955c4f2b.jpg?imwidth=762&filter=packshot" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/68bc559a80f64d459efd64d9f9cab6f7/5fd228adb7e74f7395d664f7e5654fcc.jpg?imwidth=1800" }
     ]
   },
   {
@@ -187,24 +201,26 @@
     "price": 84.99,
     "material": "Wool",
     "size": "S",
-    "color": "Red",
+    "name": "Hoodie",
+    "color": "Grey",
     "category": "Pullover",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/4a67b1bf5a704d748eb0d7fe0e17d7eb/3161026bd987440bb2f945bb3c5f54a7.jpg?imwidth=762" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/b5ac4bdd8fa14a10b9a2f10853ce54e7/351ff3f33a294fd5bef938dd60736677.jpg?imwidth=1800&filter=packshot" }
     ]
   },
   {
     "id": "16",
-    "brand": "Converse",
-    "price": 79.99,
+    "brand": "Zara",
+    "price": 29.99,
     "material": "Cotton",
     "size": "XL",
+    "name": "Hoodie",
     "color": "White",
     "category": "Pullover",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/e4a426462cba4daf951debc654d4be4c/aade4b8862ff4534b8d416b18cc72c32.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/82e8d4a564074c2592e2143a17e6992e/a76b31e88e5942878b86c46b30cb8599.jpg?imwidth=1800" }
     ]
   },
   {
@@ -213,11 +229,12 @@
     "price": 49.99,
     "material": "Cotton",
     "size": "XXL",
+    "name": "Slim fit Trousers",
     "color": "Gray",
     "category": "Trousers",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/ca9a25b29d9642408f5cd8714c10bc3b/5c8d13e8753b4ff59137f44c76f46c0f.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/b6097424713d41af95cbb31924a740fa/8ea78db990ad4095b63e03b0d6aa9954.jpg?imwidth=1800" }
     ]
   },
   {
@@ -226,24 +243,26 @@
     "price": 109.99,
     "material": "Other",
     "size": "M",
+    "name": "Bag",
     "color": "Green",
     "category": "Accessories",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/582242f3a4094b44b59d9a36417e3eaf/ac49b60112b049a4adf6040aa83bc7e2.jpg?imwidth=1800&filter=packshot" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/5623f5943c2f45b682976633921d251b/1fb697f860a64a32a3bece7514cf9ae3.jpg?imwidth=1800" }
     ]
   },
   {
     "id": "19",
     "brand": "Nike",
     "price": 59.99,
-    "material": "Cotton",
+    "material": "Mesh",
     "size": "S",
+    "name": "Slim fit T-shirt",
     "color": "Black",
     "category": "T-Shirt",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/09bb298efe20429d897a8f3d6d384a03/c9a925f465444eb1945e7dd4b7cd4817.jpg?imwidth=1800&filter=packshot" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/a715c4092d5f4daba8b1aead7df2b04d/c5083091b4024565a517a800330f2e78.jpg?imwidth=1800" }
     ]
   },
   {
@@ -252,24 +271,26 @@
     "price": 39.99,
     "material": "Wool",
     "size": "L",
+    "name": "Pullover",
     "color": "Blue",
     "category": "Pullover",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/d16cfc0b90774ddb8d9214b8356eb6a3/d3dd07e1df3b447988d918ee11cfc88e.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/44c0522fc5c8427681cdd3dc106c7b02/4692b83621f3403aa336a69795669932.jpg?imwidth=1800" }
     ]
   },
   {
     "id": "21",
-    "brand": "Adidas",
-    "price": 79.99,
+    "brand": "Nike",
+    "price": 89.99,
     "material": "Mesh",
     "size": "XL",
-    "color": "Red",
+    "name": "NBA-Curry GSW ",
+    "color": "Blue",
     "category": "Sport",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/85750b8f33c84fb78412b6b5983ef319/a220eb5125c64d4e89ce8cd6985eb8ec.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/2136c7ff9ecf4da9bad5deb1493fdcbd/84b613549d204d489568db5a9c37df92.jpg?imwidth=1800" }
     ]
   },
   {
@@ -278,11 +299,12 @@
     "price": 69.99,
     "material": "Other",
     "size": "M",
+    "name": "Chuck Taylor All Star",
     "color": "White",
     "category": "Shoes",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/eb3405f33b7f35499fbce750580d99b6/6ebced667f594c9ba12c25656e35ae84.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/4ffe4a096efc3b128e1a454072d368b3/8d4590d2946e44e0ad8f1b612430492f.jpg?imwidth=1800" }
     ]
   },
   {
@@ -291,102 +313,26 @@
     "price": 54.99,
     "material": "Mesh",
     "size": "XXL",
+    "name": "School Bag",
     "color": "Gray",
     "category": "Accessories",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/934aec00365c4da59f4eb3b7c02ffe17/570c0d4230374db09e8ef4b51961a372.jpg?imwidth=762" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/75bd5edb18cf4c46a0b537dd405b1f11/75532b7f22cf41809eb91dafc09e556f.jpg?imwidth=1800&filter=packshot" }
     ]
   },
   {
     "id": "24",
-    "brand": "Calvin Klein",
+    "brand": "Adidas",
     "price": 99.99,
-    "material": "Cotton",
+    "material": "Mesh",
     "size": "M",
-    "color": "Green",
+    "name": "AS Roma Home kit",
+    "color": "Red",
     "category": "T-Shirt",
     "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
-    ]
-  },
-  {
-    "id": "25",
-    "brand": "Nike",
-    "price": 79.99,
-    "material": "Other",
-    "size": "S",
-    "color": "Black",
-    "category": "Pullover",
-    "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
-    ]
-  },
-  {
-    "id": "26",
-    "brand": "Zara",
-    "price": 49.99,
-    "material": "Mesh",
-    "size": "L",
-    "color": "Blue",
-    "category": "Trousers",
-    "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
-    ]
-  },
-  {
-    "id": "27",
-    "brand": "Adidas",
-    "price": 89.99,
-    "material": "Other",
-    "size": "M",
-    "color": "Red",
-    "category": "Black",
-    "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
-    ]
-  },
-  {
-    "id": "28",
-    "brand": "Converse",
-    "price": 59.99,
-    "material": "Other",
-    "size": "XL",
-    "color": "White",
-    "category": "Accessories",
-    "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
-    ]
-  },
-  {
-    "id": "29",
-    "brand": "Vans",
-    "price": 44.99,
-    "material": "Mesh",
-    "size": "XXL",
-    "color": "Gray",
-    "category": "Sport",
-    "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
-    ]
-  },
-  {
-    "id": "30",
-    "brand": "Calvin Klein",
-    "price": 89.99,
-    "material": "Wool",
-    "size": "S",
-    "color": "Green",
-    "category": "Pullover",
-    "img" : [
-        {"id": 1, "url": "./media/felpablu.webp" },
-        {"id": 2, "url": "./media/giaccaverde.webp" }
+        {"id": 1, "url": "https://img01.ztat.net/article/spp-media-p1/fe2d1dc0e11a4a9d9de1d78980d72d1d/b91b8385d7b74cc989f514f7440576c0.jpg?imwidth=1800" },
+        {"id": 2, "url": "https://img01.ztat.net/article/spp-media-p1/64da0c01b0a3435ba290a7ea0fe8e410/7fff97fd90604bf08384e4ff8a2879d2.jpg?imwidth=1800&filter=packshot" }
     ]
   }
-];
+]
