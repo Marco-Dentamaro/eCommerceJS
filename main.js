@@ -7,7 +7,11 @@ fetch('./annunci.json')
 // elementi catturati
 let radiowrapper = document.querySelector('#radiowrapper');
 let cardswrapper = document.querySelector('#cardswrapper');
-// let checkboxcolors = document.querySelector('#checkboxcolors');
+let inputMinPrice = document.querySelector('#inputMinPrice');
+let inputMaxPrice = document.querySelector('#inputMaxPrice');
+let applyPrice = document.querySelector('#applyPrice');
+let checkboxbrands = document.querySelector('#checkboxbrands');
+
 
 
 
@@ -34,12 +38,13 @@ function setRadios() {
 }
 setRadios()
 let radios = document.querySelectorAll('.form-check-input');
-console.log(radios);
+// console.log(radios);
 
 // funzione showcards
 
 
     function showCards(array) {
+
         cardswrapper.innerHTML='';
         array.forEach((annuncio)=>{
             let div=document.createElement('div')
@@ -64,7 +69,9 @@ console.log(radios);
                         </div>
             `
             cardswrapper.appendChild(div)
+            // cardswrapper.innerHTML += div;
         })
+        // console.log(cardswrapper);
     }
 showCards(data)
 
@@ -74,14 +81,17 @@ showCards(data)
 function filterByCategory(){
         
     let checked = Array.from(radios).find( (button)=> button.checked);
+    // console.log(checked);
     let categoria = checked.id
 
 
     if (categoria == 'all') {
         showCards(data)
+
     }else{
         let filtered = data.filter( (annuncio)=> annuncio.category == categoria);
         showCards(filtered)
+        
     }
     
 
@@ -108,7 +118,7 @@ function setCheckbox() {
         let div= document.createElement('div');
         div.classList.add('form-check', 'p-0')
         div.innerHTML = `
-        <input class="form-check-input" type="checkbox" value="${el}" id="flexCheck${el}">
+        <input class="form-check-input ora" type="checkbox" value="${el}" id="flexCheck${el}">
         <label class="form-check-label" for="flexCheck${el}">
             ${el}
         </label>
@@ -120,16 +130,15 @@ function setCheckbox() {
 setCheckbox()
 
 
-let checkbox = document.querySelectorAll('#checkboxcolors');
-console.log(checkbox);
+
 
 
 function filterByColor() {
-    let checked = document.querySelectorAll('.form-check-input:checked');
-    let colors = Array.from(checked).map((checkbox) => checkbox.value);
+    let checked2 = document.querySelectorAll('.ora:checked');
+    let colors = Array.from(checked2).map((checkbox) => checkbox.value);
 
 
-    if (colors.includes('allcolors')) {
+    if (colors.includes('all')) {
         showCards(data);
     } else {
         let filtered = data.filter((annuncio) => colors.includes(annuncio.color));
@@ -138,11 +147,100 @@ function filterByColor() {
 }
 
 
-document.querySelectorAll('.form-check-input').forEach((checkbox) => {
+document.querySelectorAll('.ora').forEach((checkbox) => {
     checkbox.addEventListener('click', () => {
         filterByColor();
     });
 });
+
+
+
+// funzione setInputPrice
+
+function setInputPrice(array) {
+    
+    let filtered = array.filter(el => el.price >= +inputMinPrice.value && el.price <= +inputMaxPrice.value);
+    console.log(filtered);
+
+    if (filtered.length == 0 ) {
+        cardswrapper.innerHTML= `<p>Nessun prodotto trovato</p>`
+    } else{
+    showCards(filtered)
+
+    }
+
+
+
+}
+
+
+
+// evento cattura inputPrice
+
+applyPrice.addEventListener('click', ()=>{
+if (inputMinPrice.value != '' && inputMaxPrice.value != '') {
+        setInputPrice(data);
+        
+    }else{
+        console.log('ciao');
+    }
+})
+
+
+// funzione setBrands
+
+function setBrand() {
+    let brand = data.map((annuncio)=> annuncio.brand)
+
+    let uniqueBrand = Array.from(new Set(brand));
+    
+
+    uniqueBrand.forEach( (el) =>{
+        let div= document.createElement('div');
+        div.classList.add('form-check', 'p-0')
+        div.innerHTML = `
+        <input class="form-check-input brand" type="checkbox" value="${el}" id="flexCheck${el}">
+        <label class="form-check-label" for="flexCheck${el}">
+            ${el}
+        </label>
+        `
+        checkboxbrands.appendChild(div)
+    })
+
+}
+setBrand()
+
+
+function filterByBrand() {
+    let checked3 = document.querySelectorAll('.brand:checked');
+    let brands = Array.from(checked3).map((checkbox) => checkbox.value);
+    console.log(brands);
+
+
+
+    if (brands.includes('all')) {
+        showCards(data);
+    } else {
+        let filtered = data.filter((annuncio) => brands.includes(annuncio.brand));
+        showCards(filtered);
+    }
+}
+
+
+document.querySelectorAll('.brand').forEach((checkbox2) => {
+    checkbox2.addEventListener('click', () => {
+        filterByBrand();
+    });
+});
+
+
+
+
+
+
+
+
+
 
 
 
