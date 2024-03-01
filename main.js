@@ -235,7 +235,7 @@ document.querySelectorAll('.brand').forEach((checkbox2) => {
 
 
 
-
+// filtro globale
 
 
 
@@ -246,3 +246,23 @@ document.querySelectorAll('.brand').forEach((checkbox2) => {
 
 
 })
+
+
+
+
+
+
+let searchBarContainerEl = document.querySelector(".search-bar-container");
+let button = document.querySelector(".btnSearch");
+let magnifierEl = document.querySelector(".magnifier");
+
+
+    magnifierEl.addEventListener("click", () => {
+        searchBarContainerEl.classList.toggle("start");
+        magnifierEl.classList.toggle("fa-magnifying-glass");
+        magnifierEl.classList.toggle("fa-xmark");
+        button.classList.toggle("d-none");
+        setTimeout(function() {
+        button.classList.toggle("opacity-0");
+        }, 300);
+    });
