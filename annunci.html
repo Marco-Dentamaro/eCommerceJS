@@ -25,7 +25,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">StyleHub <i style="color: darkorange;"
+            <a class="navbar-brand w-25" href="./index.html">StyleHub <i style="color: darkorange;"
                     class="fa-solid fa-dice-d20"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -54,11 +54,11 @@
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
             </div>
-            <div class="logos d-none w-25 d-md-flex justify-content-end align-items-center">
+            <div class="logos d-none w-25 d-lg-flex justify-content-end align-items-center">
                 <div class="search-bar-container start me-1">
                     <i class="fa-solid fa-magnifying-glass magnifier"></i>
-                    <input name="search" type="text" class="input input-search-bar" placeholder="Cerca...">
-                    <button class="btnSearch d-none opacity-0" type="submit">Cerca</button>
+                    <input name="search" type="text" class="input input-search-bar" placeholder="I'm looking for...">
+                    <button class="btnSearch d-none opacity-0" type="submit">Search</button>
                 </div>
                 <i class="fa-solid fa-heart pe-2"></i>
                 <i class="fa-solid fa-user"></i>
@@ -68,7 +68,7 @@
     </nav>
 
     <nav class="d-flex justify-content-center">
-        <div class="col-12 col-md-7 mt-5 pt-5 d-flex flex-wrap justify-content-evenly">
+        <div class="col-12 col-md-9 mt-5 pt-5 d-flex flex-wrap justify-content-evenly">
 
             <div class="dropdown">
                 <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -134,7 +134,7 @@
 
 
 
-    <div class="container my-3">
+    <div class="container-fluid my-3">
         <div class="row">
             <div class="col-12 col-md-3 bg-body-tertiary colFiltro my-2 ">
                 <div>
@@ -144,7 +144,7 @@
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <p>Categoria</p>
+                                    <h6>Categoria</h6>
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
@@ -174,7 +174,7 @@
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <p>Colors</p>
+                                    <h6>Colors</h6>
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
@@ -202,7 +202,7 @@
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <p>Price</p>
+                                    <h6>Price</h6>
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
@@ -235,7 +235,7 @@
                             <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    <p>Brands</p>
+                                    <h6>Brands</h6>
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
@@ -258,8 +258,6 @@
 
 
 
-
-
             </div>
 
 
@@ -267,10 +265,31 @@
 
             <!-- sezione cards -->
 
-            <div class="col-12 col-md-9 my-2 d-flex flex-wrap " id="cardswrapper">
+            <div class="col-12 col-md-8 my-2 justify-content-center d-flex flex-wrap " id="cardswrapper">
 
-
+                
             </div>
+
+
+            <!-- sezione laterale -->
+            <div class="col-md-1 col-12 d-flex flex-column bg-body-tertiary colFiltro my-2">
+                <div>
+                    Subtotale+
+                </div>
+                <div>
+                    immagine
+                    
+                    brand
+                    nome
+                    
+                </div>
+
+                <div>
+                    prezzo
+                    iconaBidone
+                </div>
+            </div>
+
         </div>
 
 
