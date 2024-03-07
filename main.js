@@ -11,6 +11,7 @@ let inputMinPrice = document.querySelector('#inputMinPrice');
 let inputMaxPrice = document.querySelector('#inputMaxPrice');
 let applyPrice = document.querySelector('#applyPrice');
 let checkboxbrands = document.querySelector('#checkboxbrands');
+let shop = document.querySelectorAll('#shop');
 
 
 
@@ -63,7 +64,7 @@ let radios = document.querySelectorAll('.form-check-input');
 
                             </div>
                             <div class="col-1">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                                <i id='shop' class="fa-solid fa-cart-shopping"></i>
                             </div>
                         </div>
                         </div>
@@ -78,7 +79,7 @@ showCards(data)
 
 // funzione filterbycategory
 
-function filterByCategory(){
+function filterByCategory(array){
         
     let checked = Array.from(radios).find( (button)=> button.checked);
     // console.log(checked);
@@ -86,11 +87,11 @@ function filterByCategory(){
 
 
     if (categoria == 'all') {
-        showCards(data)
+        return array
 
     }else{
-        let filtered = data.filter( (annuncio)=> annuncio.category == categoria);
-        showCards(filtered)
+        let filtered = array.filter( (annuncio)=> annuncio.category == categoria);
+        return filtered
         
     }
     
@@ -102,7 +103,7 @@ function filterByCategory(){
 
 radios.forEach((button)=>{
     button.addEventListener('click', ()=>{
-        filterByCategory()
+        globalFilter()
     })
 })
 
@@ -133,23 +134,23 @@ setCheckbox()
 
 
 
-function filterByColor() {
+function filterByColor(array) {
     let checked2 = document.querySelectorAll('.ora:checked');
     let colors = Array.from(checked2).map((checkbox) => checkbox.value);
 
 
     if (colors.includes('all')) {
-        showCards(data);
+        return array;
     } else {
-        let filtered = data.filter((annuncio) => colors.includes(annuncio.color));
-        showCards(filtered);
+        let filtered = array.filter((annuncio) => colors.includes(annuncio.color));
+        return filtered;
     }
 }
 
 
 document.querySelectorAll('.ora').forEach((checkbox) => {
     checkbox.addEventListener('click', () => {
-        filterByColor();
+        globalFilter();
     });
 });
 
@@ -160,7 +161,7 @@ document.querySelectorAll('.ora').forEach((checkbox) => {
 function setInputPrice(array) {
     
     let filtered = array.filter(el => el.price >= +inputMinPrice.value && el.price <= +inputMaxPrice.value);
-    console.log(filtered);
+    
 
     if (filtered.length == 0 ) {
         cardswrapper.innerHTML= `<p>Nessun prodotto trovato</p>`
@@ -180,8 +181,10 @@ function setInputPrice(array) {
 applyPrice.addEventListener('click', ()=>{
 if (inputMinPrice.value != '' && inputMaxPrice.value != '') {
         setInputPrice(data);
-        
-    }else{
+    }else if(inputMinPrice.value == '' && inputMaxPrice.value != ''){
+        setInputPrice(data);
+    }
+    else{
         console.log('ciao');
     }
 })
@@ -211,25 +214,25 @@ function setBrand() {
 setBrand()
 
 
-function filterByBrand() {
+function filterByBrand(array) {
     let checked3 = document.querySelectorAll('.brand:checked');
     let brands = Array.from(checked3).map((checkbox) => checkbox.value);
-    console.log(brands);
+    // console.log(brands);
 
 
 
     if (brands.includes('all')) {
-        showCards(data);
+        return array;
     } else {
-        let filtered = data.filter((annuncio) => brands.includes(annuncio.brand));
-        showCards(filtered);
+        let filtered = array.filter((annuncio) => brands.includes(annuncio.brand));
+        return filtered;
     }
 }
 
 
 document.querySelectorAll('.brand').forEach((checkbox2) => {
     checkbox2.addEventListener('click', () => {
-        filterByBrand();
+        globalFilter();
     });
 });
 
@@ -237,7 +240,15 @@ document.querySelectorAll('.brand').forEach((checkbox2) => {
 
 // filtro globale
 
+function globalFilter() {
+    let filteredByCategory = filterByCategory(data);
+    let filteredByBrand= filterByBrand(filteredByCategory);
+    let filteredByColor = filterByColor(filteredByBrand);
+    
+    showCards(filteredByColor)
+}
 
+globalFilter()
 
 
 
