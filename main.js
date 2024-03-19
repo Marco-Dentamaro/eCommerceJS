@@ -11,7 +11,9 @@ let inputMinPrice = document.querySelector('#inputMinPrice');
 let inputMaxPrice = document.querySelector('#inputMaxPrice');
 let applyPrice = document.querySelector('#applyPrice');
 let checkboxbrands = document.querySelector('#checkboxbrands');
-let shop = document.querySelectorAll('#shop');
+let subtotale = document.querySelector('.subtotale');
+
+
 
 
 
@@ -46,32 +48,121 @@ let radios = document.querySelectorAll('.form-check-input');
 
     function showCards(array) {
 
+        
+
         cardswrapper.innerHTML='';
         array.forEach((annuncio)=>{
             let div=document.createElement('div')
             div.classList.add('col-md-3', 'col-12', 'mx-3', 'mb-2');
             div.innerHTML=`
-            <div class="card" >
+            <div id='${annuncio.id}' class="card cardGenerata" >
             <div class="card-body d-flex justify-content-between align-items-center py-1">
-                            <p class="card-text fw-semibold m-2"> € ${annuncio.price} </p>
+                            <p class="card-text fw-semibold m-2 prezzo"> € ${annuncio.price} </p>
                             <i class="fa-regular fa-heart"></i>
                         </div>
-                        <img src="${annuncio.img[0].url}" class="imgSize" alt="...">
+                        <img src="${annuncio.img[0].url}" class="position-relative" alt="...">
+                        <div id='${annuncio.id}' class="col-12 altezzaFoto">
+                        <div class="d-flex catturafoto ">
+                        
+                        </div>
+                    </div>
                         <div class="card-body d-flex justify-content-between">
+
                             <div class="col-8">
                                 <h6 class="card-text fw-semibold">${annuncio.brand}</h6>
                                 <h6>${annuncio.name}</h6>
 
                             </div>
                             <div class="col-1">
-                                <i id='shop' class="fa-solid fa-cart-shopping"></i>
+                                <i id='${annuncio.id}' class="fa-solid fa-cart-shopping shopping"></i>
                             </div>
                         </div>
                         </div>
             `
             cardswrapper.appendChild(div)
             // cardswrapper.innerHTML += div;
+
+
+            
         })
+        document.querySelectorAll('.shopping').forEach((shop) => {
+            shop.addEventListener('click', () => {
+                let index = shop.id;
+                let annuncio = data.find( el => el.id == index)
+                cartarray.push(annuncio)
+                console.log(cartarray);
+
+                let total = cartarray.map(el => el.price).reduce((acc,n)=>acc+n,0)
+                console.log(total);
+
+                subtotale.innerHTML=`
+                <h5>€ ${total}</h5>`;
+
+                cardShop.innerHTML='';
+                cartarray.forEach(el =>{
+                    // console.log(el);
+                    let div = document.createElement('div');
+                    div.classList.add('cardina');
+                    div.innerHTML=`
+                    <img class="img-fluid" src="${el.img[0].url}" alt="">
+                    <p>${el.brand}</p>
+                    <p>${el.name}</p>
+                `
+                cardShop.appendChild(div);
+
+                })
+
+
+
+
+
+
+                
+                
+
+                
+                
+                
+            });
+        });
+    let catturafoto = document.querySelector('.catturafoto');
+    let altezzaFoto = document.querySelectorAll('.altezzaFoto');
+    // console.log(altezzaFoto);
+    let cardGenerata = document.querySelectorAll('.cardGenerata')
+    // console.log(cardGenerata);
+
+    cardGenerata.forEach(el => {
+        el.addEventListener('mouseover', ()=>{
+            console.log(el);
+            altezzaFoto.forEach(element =>{
+                if (el.id == element.id) {
+                    element.classList.add('d-block')
+                    let div=document.createElement('div');
+                    div.innerHTML=`
+
+                    `
+                    catturafoto.appendChild(div)
+                }
+            })
+        })
+    })
+
+    cardGenerata.forEach(el => {
+        el.addEventListener('mouseout', ()=>{
+            altezzaFoto.forEach(element =>{
+                if (el.id == element.id) {
+                    element.classList.remove('d-block')
+                }
+            })
+        })
+    })
+
+    // altezzaFoto.forEach(el => {
+    //     console.log(el);
+    // })
+    
+
+        
         // console.log(cardswrapper);
     }
 showCards(data)
@@ -249,6 +340,21 @@ function globalFilter() {
 }
 
 globalFilter()
+
+
+// funzione per aggiunta al carrello
+
+
+
+let prezzo = document.querySelectorAll('.prezzo')
+
+let cardShop = document.querySelector('.cardShop');
+
+let cartarray=[];
+
+
+
+
 
 
 
