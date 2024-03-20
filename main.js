@@ -118,40 +118,37 @@ fetch('./annunci.json')
             });
 
 
-            let arraybarra=[];
             let catturafoto = document.querySelector('.catturafoto');
             let altezzaFoto = document.querySelectorAll('.altezzaFoto');
-            // console.log(altezzaFoto);
+
             let cardGenerata = document.querySelectorAll('.cardGenerata')
-            // console.log(cardGenerata);
 
-            cardGenerata.forEach(el => {
-                el.addEventListener('mouseover', () => {
-                    // console.log();
-                    altezzaFoto.forEach(element => {
-                        if (el.id == element.id) {
-                            element.classList.add('d-block')
-                            
-                            let index = element.id;
-                            let annuncio = data.find(el => el.id == index)
-                            arraybarra.push(annuncio)
-                            console.log(annuncio.img);
-                            
 
-                            // altezzaFoto.innerHTML = '';
-                    arraybarra.forEach(el => {
-                        console.log(el);
-                        let div = document.createElement('div');
-                        
-                        div.innerHTML = `
-                    <img src="${el.img[0].url}" alt="">
-                    <img src="${el.img[1].url}" alt="">
+// entrando in cardGenerata, deve scattare l'evento. Trovo l'indice della card hoverata con l'evento mouseover tramite index=card.id(card adesso é un par formale). Mi creo la var annuncio, in cui salvo come valore il find di tutto l'oggetto (il json) e mi ritorna un singolo oggetto dato dal confronto fra l'indice della card hoverata e l'indice della card findata.
 
-                    
-                `
-                        catturafoto.appendChild(div);
-                        })}
-                    })
+// trovato l'oggetto, in quanto pieno ed esistente, gli mettiamo una condizione per entrare nella fascia bianca e, per ognuna di esse, confronta tramite if, che, se l'id della cardgenerata e hoverata, sia uguale all'id della fascia bianca (ABBIAMO DATO UN ID IN FASE DI COSTRUZIONE DI ESSA, annuncio.id), vai  a costruire l'elemento
+
+            cardGenerata.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    let index = card.id;
+                    let annuncio = data.find(el => el.id == index)
+                    console.log(annuncio);
+                
+
+                    if (annuncio) {
+                        altezzaFoto.forEach(element => {
+                            if (card.id == element.id) {
+                                element.classList.add('d-block')
+
+                                let div = document.createElement('div');
+                                element.innerHTML = `
+                                    <img class='imgxx' src=${annuncio.img[0].url}>
+                                    <img class='imgxx' src=${annuncio.img[1].url}>
+                                    `
+                                catturafoto.appendChild(div);
+                            }
+                        })
+                    }
                 })
             })
 
@@ -268,9 +265,6 @@ fetch('./annunci.json')
                 showCards(filtered)
 
             }
-
-
-
         }
 
 
