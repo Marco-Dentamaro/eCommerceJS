@@ -12,6 +12,8 @@ fetch('./annunci.json')
         let applyPrice = document.querySelector('#applyPrice');
         let checkboxbrands = document.querySelector('#checkboxbrands');
         let subtotale = document.querySelector('.subtotale');
+        let imgnew;
+   
 
 
 
@@ -48,8 +50,6 @@ fetch('./annunci.json')
 
         function showCards(array) {
 
-
-
             cardswrapper.innerHTML = '';
             array.forEach((annuncio) => {
                 let div = document.createElement('div')
@@ -60,7 +60,7 @@ fetch('./annunci.json')
                             <p class="card-text fw-semibold m-2 prezzo"> € ${annuncio.price} </p>
                             <i class="fa-regular fa-heart"></i>
                         </div>
-                        <img src="${annuncio.img[0].url}" class="position-relative" alt="...">
+                        <img src="${annuncio.img[0].url}" class="imgDefault position-relative" alt="...">
                         <div id='${annuncio.id}' class="col-12 altezzaFoto">
                         <div class="d-flex catturafoto ">
                         
@@ -80,11 +80,9 @@ fetch('./annunci.json')
                         </div>
             `
                 cardswrapper.appendChild(div)
-
-
-
-
             })
+
+
             document.querySelectorAll('.shopping').forEach((shop) => {
                 shop.addEventListener('click', () => {
                     let index = shop.id;
@@ -93,7 +91,7 @@ fetch('./annunci.json')
                     // console.log(cartarray);
 
                     let total = cartarray.map(el => el.price).reduce((acc, n) => acc + n, 0)
-                    console.log(total);
+                    // console.log(total);
 
                     subtotale.innerHTML = `
                 <h5>€ ${total}</h5>`;
@@ -111,28 +109,35 @@ fetch('./annunci.json')
                         cardShop.appendChild(div);
 
                     })
-
-
-
                 });
             });
+
 
 
             let catturafoto = document.querySelector('.catturafoto');
             let altezzaFoto = document.querySelectorAll('.altezzaFoto');
 
-            let cardGenerata = document.querySelectorAll('.cardGenerata')
+            let cardGenerata = document.querySelectorAll('.cardGenerata');
+
+            let imgDefault=document.querySelectorAll('.imgDefault');
+            // console.log(imgDefault);
+            
+            
+
 
 
 // entrando in cardGenerata, deve scattare l'evento. Trovo l'indice della card hoverata con l'evento mouseover tramite index=card.id(card adesso é un par formale). Mi creo la var annuncio, in cui salvo come valore il find di tutto l'oggetto (il json) e mi ritorna un singolo oggetto dato dal confronto fra l'indice della card hoverata e l'indice della card findata.
 
 // trovato l'oggetto, in quanto pieno ed esistente, gli mettiamo una condizione per entrare nella fascia bianca e, per ognuna di esse, confronta tramite if, che, se l'id della cardgenerata e hoverata, sia uguale all'id della fascia bianca (ABBIAMO DATO UN ID IN FASE DI COSTRUZIONE DI ESSA, annuncio.id), vai  a costruire l'elemento
 
-            cardGenerata.forEach(card => {
-                card.addEventListener('mouseover', () => {
+            cardGenerata.forEach((card, i) => {
+
+                
+                
+                card.addEventListener('mouseenter', () => {
                     let index = card.id;
                     let annuncio = data.find(el => el.id == index)
-                    console.log(annuncio);
+                    // console.log(annuncio);
                 
 
                     if (annuncio) {
@@ -140,20 +145,69 @@ fetch('./annunci.json')
                             if (card.id == element.id) {
                                 element.classList.add('d-block')
 
-                                let div = document.createElement('div');
+                                // let div = document.createElement('div');
                                 element.innerHTML = `
-                                    <img class='imgxx' src=${annuncio.img[0].url}>
-                                    <img class='imgxx' src=${annuncio.img[1].url}>
+                                    <img id='${annuncio.id}' class='imgxx img1' src=${annuncio.img[0].url}>
+                                    <img id='${annuncio.id}' class='imgxx img2' src=${annuncio.img[1].url}>
                                     `
-                                catturafoto.appendChild(div);
+                                // catturafoto.appendChild(div);
+                                // console.log(element);
+                                let img1 =document.querySelectorAll('.img1');
+                                console.log(img1[0]);
+                                let imgkk=img1[0];
+                                
+                                // img1.forEach(img=>{
+                                    imgkk.addEventListener('click', ()=>{
+                                        // let immagine = data.find( card=> card.id == img1.id)
+                                        // console.log(immagine.img[0]);
+                                        // console.log(img1.id, card.id);
+                                        // if (card.id == img1.id) {
+                                            
+                                        // }
+
+                                        // let imgyy= immagine.img[0];
+                                        // console.log(annuncio);
+                                        // console.log(imgDefault);
+                                        
+                                        // imgDefault.forEach(el=>{
+                                            imgDefault.src=`${annuncio.img[0].url}`
+                                        
+                                        // })
+                                    
+                                    })
+                                // })
+                                
+                               
+                                let img2 =document.querySelectorAll('.img2');
+                                img2.forEach(img => {
+                                    
+                                    img.addEventListener('click', ()=>{
+                                        if (card.id == element.id) {
+                                        imgDefault.forEach(el=>{
+                                            el.src=`${annuncio.img[1].url}`
+                                        
+                                        })
+                                    }
+                                    })
+                                });
+
+                        
+
+                                
                             }
                         })
+
+                    
+
                     }
-                })
-            })
+                    
+    
+                            })
+                            
+                        })
 
             cardGenerata.forEach(el => {
-                el.addEventListener('mouseout', () => {
+                el.addEventListener('mouseleave', () => {
                     altezzaFoto.forEach(element => {
                         if (el.id == element.id) {
                             element.classList.remove('d-block')
@@ -162,9 +216,9 @@ fetch('./annunci.json')
                 })
             })
 
-            // altezzaFoto.forEach(el => {
-            //     console.log(el);
-            // })
+            altezzaFoto.forEach(el => {
+                // console.log(el);
+            })
 
 
 
