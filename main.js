@@ -61,7 +61,7 @@ fetch('./annunci.json')
                             <i class="fa-regular fa-heart"></i>
                         </div>
                         <img src="${annuncio.img[0].url}" class="imgDefault position-relative" alt="...">
-                        <div id='${annuncio.id}' class="col-12 altezzaFoto">
+                        <div id='${annuncio.id}' class="col-12 bannerFoto">
                         <div class="d-flex catturafoto ">
                         
                         </div>
@@ -114,8 +114,8 @@ fetch('./annunci.json')
 
 
 
-            let catturafoto = document.querySelector('.catturafoto');
-            let altezzaFoto = document.querySelectorAll('.altezzaFoto');
+
+            let bannerFoto = document.querySelectorAll('.bannerFoto');
 
             let cardGenerata = document.querySelectorAll('.cardGenerata');
 
@@ -137,13 +137,14 @@ fetch('./annunci.json')
 
                 card.addEventListener('mouseenter', () => {
                     let index = card.id;
+                    // console.log(index);
                     
                     let annuncio = data.find(el => el.id == index)
                     // console.log(annuncio);
 
 
                     if (annuncio) {
-                        altezzaFoto.forEach(element => {
+                        bannerFoto.forEach(element => {
                             if (card.id == element.id) {
                                 element.classList.add('d-block')
 
@@ -181,7 +182,7 @@ fetch('./annunci.json')
 
             cardGenerata.forEach(el => {
                 el.addEventListener('mouseleave', () => {
-                    altezzaFoto.forEach(element => {
+                    bannerFoto.forEach(element => {
                         if (el.id == element.id) {
                             element.classList.remove('d-block')
                         }
@@ -189,7 +190,7 @@ fetch('./annunci.json')
                 })
             })
 
-            altezzaFoto.forEach(el => {
+            bannerFoto.forEach(el => {
                 // console.log(el);
             })
 
@@ -364,31 +365,31 @@ fetch('./annunci.json')
             let filteredByCategory = filterByCategory(data);
             let filteredByBrand = filterByBrand(filteredByCategory);
             let filteredByColor = filterByColor(filteredByBrand);
+            let filteredByWord = filterByWord(filteredByColor);
 
-            showCards(filteredByColor)
+            showCards(filteredByWord)
         }
 
         globalFilter()
 
 
-        // funzione per aggiunta al carrello
 
 
-
-        let prezzo = document.querySelectorAll('.prezzo')
-
-        let cardShop = document.querySelector('.cardShop');
-
-        let cartarray = [];
+        // funzione per ricerca per parola
 
 
 
 
+function filterByWord(array) {
+    
+    let filtered = array.filter( (annuncio)=> annuncio.name.toLowerCase().includes(inputsearchbar.value.toLowerCase())  )
+    return filtered
+    
+}
 
-
-
-
-
+inputsearchbar.addEventListener('input', ()=> {
+    globalFilter(inputsearchbar.value);
+})
 
 
     })
@@ -397,7 +398,7 @@ fetch('./annunci.json')
 
 
 
-
+let inputsearchbar = document.querySelector('.input-search-bar')
 let searchBarContainerEl = document.querySelector(".search-bar-container");
 let button = document.querySelector(".btnSearch");
 let magnifierEl = document.querySelector(".magnifier");
