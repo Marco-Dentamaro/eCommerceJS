@@ -13,7 +13,7 @@ fetch('./annunci.json')
         let checkboxbrands = document.querySelector('#checkboxbrands');
         let subtotale = document.querySelector('.subtotale');
         let imgnew;
-   
+
 
 
 
@@ -119,92 +119,65 @@ fetch('./annunci.json')
 
             let cardGenerata = document.querySelectorAll('.cardGenerata');
 
-            let imgDefault=document.querySelectorAll('.imgDefault');
+            let imgDefault = document.querySelectorAll('.imgDefault');
             // console.log(imgDefault);
-            
-            
 
 
 
-// entrando in cardGenerata, deve scattare l'evento. Trovo l'indice della card hoverata con l'evento mouseover tramite index=card.id(card adesso é un par formale). Mi creo la var annuncio, in cui salvo come valore il find di tutto l'oggetto (il json) e mi ritorna un singolo oggetto dato dal confronto fra l'indice della card hoverata e l'indice della card findata.
 
-// trovato l'oggetto, in quanto pieno ed esistente, gli mettiamo una condizione per entrare nella fascia bianca e, per ognuna di esse, confronta tramite if, che, se l'id della cardgenerata e hoverata, sia uguale all'id della fascia bianca (ABBIAMO DATO UN ID IN FASE DI COSTRUZIONE DI ESSA, annuncio.id), vai  a costruire l'elemento
 
-            cardGenerata.forEach((card, i) => {
+            // entrando in cardGenerata, deve scattare l'evento. Trovo l'indice della card hoverata con l'evento mouseover tramite index=card.id(card adesso é un par formale). Mi creo la var annuncio, in cui salvo come valore il find di tutto l'oggetto (il json) e mi ritorna un singolo oggetto dato dal confronto fra l'indice della card hoverata e l'indice della card findata.
 
-                
-                
+            // trovato l'oggetto, in quanto pieno ed esistente, gli mettiamo una condizione per entrare nella fascia bianca e, per ognuna di esse, confronta tramite if, che, se l'id della cardgenerata e hoverata, sia uguale all'id della fascia bianca (ABBIAMO DATO UN ID IN FASE DI COSTRUZIONE DI ESSA, annuncio.id), vai  a costruire l'elemento
+
+
+            cardGenerata.forEach((card) => {
+
+
+
                 card.addEventListener('mouseenter', () => {
                     let index = card.id;
+                    
                     let annuncio = data.find(el => el.id == index)
                     // console.log(annuncio);
-                
+
 
                     if (annuncio) {
                         altezzaFoto.forEach(element => {
                             if (card.id == element.id) {
                                 element.classList.add('d-block')
 
-                                // let div = document.createElement('div');
                                 element.innerHTML = `
                                     <img id='${annuncio.id}' class='imgxx img1' src=${annuncio.img[0].url}>
                                     <img id='${annuncio.id}' class='imgxx img2' src=${annuncio.img[1].url}>
                                     `
-                                // catturafoto.appendChild(div);
-                                // console.log(element);
-                                let img1 =document.querySelectorAll('.img1');
-                                console.log(img1[0]);
-                                let imgkk=img1[0];
-                                
-                                // img1.forEach(img=>{
-                                    imgkk.addEventListener('click', ()=>{
-                                        // let immagine = data.find( card=> card.id == img1.id)
-                                        // console.log(immagine.img[0]);
-                                        // console.log(img1.id, card.id);
-                                        // if (card.id == img1.id) {
-                                            
-                                        // }
 
-                                        // let imgyy= immagine.img[0];
-                                        // console.log(annuncio);
-                                        // console.log(imgDefault);
-                                        
-                                        // imgDefault.forEach(el=>{
-                                            imgDefault.src=`${annuncio.img[0].url}`
-                                        
-                                        // })
-                                    
-                                    })
-                                // })
-                                
-                               
-                                let img2 =document.querySelectorAll('.img2');
-                                img2.forEach(img => {
-                                    
-                                    img.addEventListener('click', ()=>{
-                                        if (card.id == element.id) {
-                                        imgDefault.forEach(el=>{
-                                            el.src=`${annuncio.img[1].url}`
-                                        
+                                    let img1 = document.querySelectorAll('.img1');
+                                    img1.forEach(el => {
+                                        el.addEventListener('click', () => {
+                                            imgDefault[index].src = annuncio.img[0].url;
                                         })
-                                    }
                                     })
-                                });
 
-                        
-
-                                
+                                    let img2 = document.querySelectorAll('.img2');
+                                    img2.forEach(el => {
+    
+                                        el.addEventListener('click', () => {
+                                            imgDefault[index].src = annuncio.img[1].url;
+                                        })
+                                    })
                             }
                         })
 
-                    
+
 
                     }
-                    
-    
-                            })
-                            
-                        })
+                    // fuori dall'if
+
+                })
+                // fuori mouseenter
+
+            })
 
             cardGenerata.forEach(el => {
                 el.addEventListener('mouseleave', () => {
