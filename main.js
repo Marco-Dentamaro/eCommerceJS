@@ -156,7 +156,7 @@ fetch('./annunci.json')
                                     let img1 = document.querySelectorAll('.img1');
                                     img1.forEach(el => {
                                         el.addEventListener('click', () => {
-                                            imgDefault[index].src = annuncio.img[0].url;
+                                            imgDefault[index-1].src = annuncio.img[0].url;
                                         })
                                     })
 
@@ -164,7 +164,7 @@ fetch('./annunci.json')
                                     img2.forEach(el => {
     
                                         el.addEventListener('click', () => {
-                                            imgDefault[index].src = annuncio.img[1].url;
+                                            imgDefault[index-1].src = annuncio.img[1].url;
                                         })
                                     })
                             }
@@ -359,13 +359,28 @@ fetch('./annunci.json')
 
 
 
+        // filtro per parola
+
+
+function filterByWord(array) {
+    let filtered = array.filter( (annuncio)=> annuncio.name.toLowerCase().includes(inputsearchbar.value.toLowerCase())  )
+    return filtered
+    
+}
+
+
+inputsearchbar.addEventListener('input', ()=> {
+    globalFilter(inputsearchbar.value);
+})
+
+
         // filtro globale
 
         function globalFilter() {
             let filteredByCategory = filterByCategory(data);
             let filteredByBrand = filterByBrand(filteredByCategory);
             let filteredByColor = filterByColor(filteredByBrand);
-            let filteredByWord = filterByWord(filteredByColor);
+            let filteredByWord = filterByWord(filteredByColor)
 
             showCards(filteredByWord)
         }
@@ -373,23 +388,24 @@ fetch('./annunci.json')
         globalFilter()
 
 
-
-
-        // funzione per ricerca per parola
-
+        // funzione per aggiunta al carrello
 
 
 
-function filterByWord(array) {
-    
-    let filtered = array.filter( (annuncio)=> annuncio.name.toLowerCase().includes(inputsearchbar.value.toLowerCase())  )
-    return filtered
-    
-}
+        let prezzo = document.querySelectorAll('.prezzo')
 
-inputsearchbar.addEventListener('input', ()=> {
-    globalFilter(inputsearchbar.value);
-})
+        let cardShop = document.querySelector('.cardShop');
+
+        let cartarray = [];
+
+
+
+
+
+
+
+
+
 
 
     })
@@ -397,8 +413,11 @@ inputsearchbar.addEventListener('input', ()=> {
 
 
 
+    
 
-let inputsearchbar = document.querySelector('.input-search-bar')
+
+
+let inputsearchbar=document.querySelector('.input-search-bar')
 let searchBarContainerEl = document.querySelector(".search-bar-container");
 let button = document.querySelector(".btnSearch");
 let magnifierEl = document.querySelector(".magnifier");
