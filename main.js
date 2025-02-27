@@ -47,15 +47,19 @@ fetch('./annunci.json')
 
         // funzione showcards
 
+        let prova = 0;
+
+
 
         function showCards(array) {
 
             cardswrapper.innerHTML = '';
             array.forEach((annuncio) => {
+                prova++
                 let div = document.createElement('div')
                 div.classList.add('col-md-3', 'col-12', 'mx-3', 'mb-2');
                 div.innerHTML = `
-            <div id='${annuncio.id}' class="card cardGenerata" >
+            <div id='${prova}' class="card cardGenerata" >
             <div class="card-body d-flex justify-content-between align-items-center py-1">
                             <p class="card-text fw-semibold m-2 prezzo"> € ${annuncio.price} </p>
                             <i class="fa-regular fa-heart"></i>
@@ -90,7 +94,7 @@ fetch('./annunci.json')
                     cartarray.push(annuncio)
                     // console.log(cartarray);
 
-                    let total = cartarray.map(el => el.price).reduce((acc, n) => acc + n, 0)
+                    let total = cartarray.map(el => el.price).reduce((acc, n) => acc + n, 0).toFixed(2)
                     // console.log(total);
 
                     subtotale.innerHTML = `
@@ -132,31 +136,34 @@ fetch('./annunci.json')
 
 
             cardGenerata.forEach((card) => {
-
+                console.dir(card);
+                
+                let index = card.id-1;
 
 
                 card.addEventListener('mouseenter', () => {
-                    let index = card.id;
-                    // console.log(index);
+                    console.log(index);
                     
-                    let annuncio = data.find(el => el.id == index)
+                    // let annuncio = data.find(el => el.id == index)
                     // console.log(annuncio);
 
 
-                    if (annuncio) {
-                        bannerFoto.forEach(element => {
-                            if (card.id == element.id) {
-                                element.classList.add('d-block')
+                    // if (annuncio) {
+                        // bannerFoto.forEach(element => {
+                            // if (card.id == element.id) {
+                                bannerFoto[index].classList.add('d-block')
 
-                                element.innerHTML = `
-                                    <img id='${annuncio.id}' class='imgxx img1' src=${annuncio.img[0].url}>
-                                    <img id='${annuncio.id}' class='imgxx img2' src=${annuncio.img[1].url}>
+                                // console.log(index)
+                                // console.log(data[index].img[1].url);
+                                bannerFoto[index].innerHTML = `
+                                    <img id='${index}' class='imgxx img1' src=${data[index].img[0].url}>
+                                    <img id='${index}' class='imgxx img2' src=${data[index].img[1].url}>
                                     `
 
                                     let img1 = document.querySelectorAll('.img1');
                                     img1.forEach(el => {
                                         el.addEventListener('click', () => {
-                                            imgDefault[index-1].src = annuncio.img[0].url;
+                                            imgDefault[index].src = data[index].img[0].url;
                                         })
                                     })
 
@@ -164,15 +171,15 @@ fetch('./annunci.json')
                                     img2.forEach(el => {
     
                                         el.addEventListener('click', () => {
-                                            imgDefault[index-1].src = annuncio.img[1].url;
+                                            imgDefault[index].src = data[index].img[1].url;
                                         })
                                     })
-                            }
-                        })
+                            // }
+                        // })
 
 
 
-                    }
+                    // }
                     // fuori dall'if
 
                 })
@@ -181,19 +188,20 @@ fetch('./annunci.json')
             })
 
             cardGenerata.forEach(el => {
+                // el.addEventListener('mouseleave', () => {
+                //     bannerFoto.forEach(element => {
+                //         if (el.id == element.id) {
+                //             element.classList.remove('d-block')
+                //         }
+                //     })
+                // })
+                let index = el.id -1;
                 el.addEventListener('mouseleave', () => {
-                    bannerFoto.forEach(element => {
-                        if (el.id == element.id) {
-                            element.classList.remove('d-block')
-                        }
-                    })
+                    bannerFoto[index].classList.remove('d-block');
                 })
             })
 
-            bannerFoto.forEach(el => {
-                // console.log(el);
-            })
-
+          
 
 
             // console.log(cardswrapper);

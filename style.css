@@ -2,6 +2,11 @@
     font-family: "Montserrat", sans-serif; ;
 }
 
+.txt-orange{
+    color: darkorange;
+
+}
+
 .navbar{
     border-bottom: 2px solid rgba(112, 128, 144, 0.046);
     padding-left: 30px;
