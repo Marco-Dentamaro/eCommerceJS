@@ -47,25 +47,29 @@ fetch('./annunci.json')
 
         // funzione showcards
 
-        let prova = 0;
-
-
-
+        
+        
+        let startId = 0;
+        
         function showCards(array) {
 
             cardswrapper.innerHTML = '';
+            startId = 0;
+
             array.forEach((annuncio) => {
-                prova++
+                startId++
+                // console.log(startId);
+                
                 let div = document.createElement('div')
                 div.classList.add('col-md-3', 'col-12', 'mx-3', 'mb-2');
                 div.innerHTML = `
-            <div id='${prova}' class="card cardGenerata" >
+            <div id='${startId}' class="card cardGenerata" >
             <div class="card-body d-flex justify-content-between align-items-center py-1">
                             <p class="card-text fw-semibold m-2 prezzo"> € ${annuncio.price} </p>
                             <i class="fa-regular fa-heart"></i>
                         </div>
                         <img src="${annuncio.img[0].url}" class="imgDefault position-relative" alt="...">
-                        <div id='${annuncio.id}' class="col-12 bannerFoto">
+                        <div id='${startId}' class="col-12 bannerFoto">
                         <div class="d-flex catturafoto ">
                         
                         </div>
@@ -84,39 +88,38 @@ fetch('./annunci.json')
                         </div>
             `
                 cardswrapper.appendChild(div)
+
             })
-
-
+            
             document.querySelectorAll('.shopping').forEach((shop) => {
                 shop.addEventListener('click', () => {
                     let index = shop.id;
                     let annuncio = data.find(el => el.id == index)
                     cartarray.push(annuncio)
                     // console.log(cartarray);
-
+                    
                     let total = cartarray.map(el => el.price).reduce((acc, n) => acc + n, 0).toFixed(2)
                     // console.log(total);
-
+                    
                     subtotale.innerHTML = `
-                <h5>€ ${total}</h5>`;
-
+                    <h5>€ ${total}</h5>`;
+                    
                     cardShop.innerHTML = '';
                     cartarray.forEach(el => {
                         // console.log(el);
                         let div = document.createElement('div');
                         div.classList.add('cardina');
                         div.innerHTML = `
-                    <img class="img-fluid" src="${el.img[0].url}" alt="">
-                    <h6 class='fw-bold'>${el.brand}</h6>
-                    <h6>${el.name}</h6>
-                `
+                        <img class="img-fluid" src="${el.img[0].url}" alt="">
+                        <h6 class='fw-bold'>${el.brand}</h6>
+                        <h6>${el.name}</h6>
+                        `
                         cardShop.appendChild(div);
-
+                        
                     })
                 });
             });
-
-
+            
 
 
             let bannerFoto = document.querySelectorAll('.bannerFoto');
@@ -128,42 +131,41 @@ fetch('./annunci.json')
 
 
 
-
-
             // entrando in cardGenerata, deve scattare l'evento. Trovo l'indice della card hoverata con l'evento mouseover tramite index=card.id(card adesso é un par formale). Mi creo la var annuncio, in cui salvo come valore il find di tutto l'oggetto (il json) e mi ritorna un singolo oggetto dato dal confronto fra l'indice della card hoverata e l'indice della card findata.
 
             // trovato l'oggetto, in quanto pieno ed esistente, gli mettiamo una condizione per entrare nella fascia bianca e, per ognuna di esse, confronta tramite if, che, se l'id della cardgenerata e hoverata, sia uguale all'id della fascia bianca (ABBIAMO DATO UN ID IN FASE DI COSTRUZIONE DI ESSA, annuncio.id), vai  a costruire l'elemento
 
 
             cardGenerata.forEach((card) => {
-                console.dir(card);
+                // console.dir(card);
                 
                 let index = card.id-1;
+                // console.log(index);
+                
 
 
                 card.addEventListener('mouseenter', () => {
-                    console.log(index);
+                    // console.log(index);
                     
                     // let annuncio = data.find(el => el.id == index)
                     // console.log(annuncio);
 
-
+                    // let bannerFoto = globalFilter()
                     // if (annuncio) {
                         // bannerFoto.forEach(element => {
-                            // if (card.id == element.id) {
-                                bannerFoto[index].classList.add('d-block')
-
+                            if (bannerFoto[index]) {
+                                bannerFoto[index].classList.add('d-block')                                
                                 // console.log(index)
                                 // console.log(data[index].img[1].url);
                                 bannerFoto[index].innerHTML = `
-                                    <img id='${index}' class='imgxx img1' src=${data[index].img[0].url}>
-                                    <img id='${index}' class='imgxx img2' src=${data[index].img[1].url}>
+                                    <img id='${index}' class='imgxx img1' src=${array[index].img[0].url}>
+                                    <img id='${index}' class='imgxx img2' src=${array[index].img[1].url}>
                                     `
 
                                     let img1 = document.querySelectorAll('.img1');
                                     img1.forEach(el => {
                                         el.addEventListener('click', () => {
-                                            imgDefault[index].src = data[index].img[0].url;
+                                            imgDefault[index].src = array[index].img[0].url;
                                         })
                                     })
 
@@ -171,10 +173,10 @@ fetch('./annunci.json')
                                     img2.forEach(el => {
     
                                         el.addEventListener('click', () => {
-                                            imgDefault[index].src = data[index].img[1].url;
+                                            imgDefault[index].src = array[index].img[1].url;
                                         })
                                     })
-                            // }
+                            }
                         // })
 
 
@@ -195,13 +197,15 @@ fetch('./annunci.json')
                 //         }
                 //     })
                 // })
-                let index = el.id -1;
-                el.addEventListener('mouseleave', () => {
-                    bannerFoto[index].classList.remove('d-block');
-                })
+                // let bannerFoto = globalFilter()
+                let index = el.id-1;
+                if(bannerFoto[index]){
+                    el.addEventListener('mouseleave', () => {
+                        bannerFoto[index].classList.remove('d-block');
+                    })
+                }
             })
 
-          
 
 
             // console.log(cardswrapper);
